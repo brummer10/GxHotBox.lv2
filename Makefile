@@ -79,7 +79,7 @@ clean :
 	@rm -rf ./$(BUNDLE)
 	@echo ". ." $(BLUE)", clean up"$(NONE)
 
-install : all
+install :
 	@mkdir -p $(DESTDIR)$(INSTALL_DIR)/$(BUNDLE)
 	cp ./$(BUNDLE)/* $(DESTDIR)$(INSTALL_DIR)/$(BUNDLE)
 	@echo ". ." $(BLUE)", done"$(NONE)
