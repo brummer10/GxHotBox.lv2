@@ -47,13 +47,13 @@
     lv2:project <http://guitarix.sourceforge.net/plugins/gx_hotbox_> ;
     lv2:optionalFeature lv2:hardRTCapable ;
       
-    lv2:minorVersion 34;
+    lv2:minorVersion 35;
     lv2:microVersion 0;
 
   guiext:ui <http://guitarix.sourceforge.net/plugins/gx_hotbox_gui#_hotbox_>;
     
 rdfs:comment """
-Analouge simulation of a tube preamp with overdrive and interactive tone control
+
 ...
 
 """;
@@ -97,7 +97,7 @@ Analouge simulation of a tube preamp with overdrive and interactive tone control
         lv2:index 4 ;
         lv2:symbol "GAIN" ;
         lv2:name "GAIN" ;
-        lv2:default 0.25 ;
+        lv2:default 0.5 ;
         lv2:minimum 0.0 ;
         lv2:maximum 1.0 ;
     ]      , [
@@ -115,13 +115,14 @@ Analouge simulation of a tube preamp with overdrive and interactive tone control
         lv2:index 6 ;
         lv2:symbol "VOLUME" ;
         lv2:name "VOLUME" ;
-        lv2:default 0.5 ;
+        lv2:default 0.25 ;
         lv2:minimum 0.0 ;
         lv2:maximum 1.0 ;
     ] .
 
 <http://guitarix.sourceforge.net/plugins/gx_hotbox_gui#_hotbox_>
-  a guiext:GtkUI;
+  a guiext:X11UI;
   guiext:binary <gx_hotbox_ui.so>;
-  guiext:requiredFeature guiext:makeResident;
+        lv2:extensionData guiext::idle ; 
+        lv2:requiredFeature guiext:makeResident;
   .
