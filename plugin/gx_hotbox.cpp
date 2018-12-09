@@ -123,7 +123,7 @@ Gx_hotbox_::Gx_hotbox_() :
   input(NULL),
   hotbox(hotbox::plugin()),
   bypass(0),
-  bypass_(0),
+  bypass_(2),
   needs_ramp_down(false),
   needs_ramp_up(false),
   bypassed(false) {};
