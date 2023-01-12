@@ -767,7 +767,7 @@ static void set_next_controller_active(gx_hotboxUI *ui) {
 }
 
 // get/set active controller on enter and leave notify
-void get_active_controller(gx_hotboxUI *ui, bool set) {
+void get_last_active_controller(gx_hotboxUI *ui, bool set) {
 	static gx_controller *sc = NULL;
 	static int s = 0;
 	for (int i=0;i<CONTROLS;i++) {
@@ -924,10 +924,10 @@ static void event_handler(gx_hotboxUI *ui) {
 			break;
 
 			case EnterNotify:
-				if (!blocked) get_active_controller(ui, true);
+				if (!blocked) get_last_active_controller(ui, true);
 			break;
 			case LeaveNotify:
-				if (!blocked) get_active_controller(ui, false);
+				if (!blocked) get_last_active_controller(ui, false);
 			break;
 			case MotionNotify:
 				// mouse move while button1 is pressed
